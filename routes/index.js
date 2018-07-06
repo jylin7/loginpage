@@ -86,15 +86,6 @@ router.get("/logout", function(req, res){
     res.redirect("/");
 });
 
-
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    console.log("NOOOoo going to login page");
-    res.redirect("/login");
-}
-
 router.get("/logout", function(req, res){
      req.logout();
      res.redirect("/");
